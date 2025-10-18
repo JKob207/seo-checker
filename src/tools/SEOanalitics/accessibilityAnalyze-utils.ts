@@ -1,0 +1,24 @@
+import { CheerioAPI } from "cheerio";
+
+export const getAccessibilityAnalitics = (page: CheerioAPI) => {
+	const missingAltAttr = isMissingAltAttr(page);
+
+	return {
+		missingAltAttr
+	};
+};
+
+const isMissingAltAttr = (page: CheerioAPI) => {
+	const missingAlt: string[] = [];
+
+	const imgTags = page('body img');
+	imgTags.each((_, el) => {
+		console.log(el);
+		const alt = el.attribs['alt'];
+		if(!alt) {
+			missingAlt.push(el.attribs['src']);
+		}
+	});
+
+	return missingAlt;
+};
