@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 
 const roboto = Roboto({
 	variable: "--font-roboto",
@@ -28,7 +29,9 @@ export default function RootLayout({
         		</section>
 
 				<main>
-					{children}
+					<Suspense fallback={<h2>Loading...</h2>}>
+						{children}
+					</Suspense>
 				</main>
 			</body>
 		</html>

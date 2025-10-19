@@ -72,22 +72,3 @@ const calculateFleschReadingEase = (text: string) => {
 
 	return Number(flesch.toFixed(2));
 };
-
-
-// Remove to another util
-
-export const getFleschLabel = (fleschScore: number) => {
-	if(fleschScore < 50) return 'Difficult';
-	if(fleschScore >= 50 && fleschScore < 70 ) return 'Standard';
-	if(fleschScore >= 70) return 'Easy';
-	return '';
-};
-
-export const getContentDiversityLabels = (contentDiversity: number) => {
-	if(contentDiversity < 0.2) return 'All words are the same!';
-	if(contentDiversity >= 0.2 && contentDiversity < 0.4 ) return 'Low diversity';
-	if(contentDiversity >= 0.4 && contentDiversity < 0.6 ) return 'Moderate diversity';
-	if(contentDiversity >= 0.6 && contentDiversity < 0.8 ) return 'High diversity';
-	if(contentDiversity >= 0.8 ) return 'Very high diversity';
-	return '';
-};
