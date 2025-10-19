@@ -65,3 +65,41 @@ export const getHeadingsValidation = (headings: headingType[]) => {
 
 	return issues;
 };
+
+export const getTitleLengthValidation = (length: number): SEOValidationTypes => {
+	if(length < 50) return {
+		type: 'warning',
+		message: 'Title too short'
+	};
+	if(length >= 50 && length <= 60) return {
+		type: 'success',
+		message: 'Title correct length'
+	};
+	if(length > 60) return {
+		type: 'warning',
+		message: 'Title too long'
+	};
+	return {
+		type: 'info',
+		message: ''
+	};
+};
+
+export const getDescriptionLengthValidation = (length: number): SEOValidationTypes => {
+	if(length < 120) return {
+		type: 'warning',
+		message: 'Description too short'
+	};
+	if(length >= 120 && length <= 160) return {
+		type: 'success',
+		message: 'Description correct length'
+	};
+	if(length > 160) return {
+		type: 'warning',
+		message: 'Description too long'
+	};
+	return {
+		type: 'info',
+		message: ''
+	};
+};
