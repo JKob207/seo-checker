@@ -7,7 +7,7 @@ export const getStructureAnalitics = (page: CheerioAPI, topKeywords:  [string, n
 	const canonicalTag = getCanonicalTag(page);
 	const robotsTag = getRobotsTag(page);
 	const langTag = getLangTag(page);
-	const headingStructure = checkHeadingsStructure(page);
+	const headingsStructure = getHeadings(page);
 
 	return {
 		titleReport,
@@ -15,7 +15,7 @@ export const getStructureAnalitics = (page: CheerioAPI, topKeywords:  [string, n
 		canonicalTag,
 		robotsTag,
 		langTag,
-		headingStructure
+		headingsStructure
 	};
 };
 
@@ -60,16 +60,6 @@ const getLangTag = (page: CheerioAPI) => {
 	return langTag || null;
 };
 
-const checkHeadingsStructure = (page: CheerioAPI) => {
-	const headings = getHeadings(page);
-	const headingsValidation = getHeadingsValidation(headings);
-
-	return {
-		headings,
-		validation: headingsValidation
-	};
-};
-
 const getHeadings = (page: CheerioAPI) => {
 	const headings: headingType[] = [];
 	page("h1, h2, h3, h4, h5, h6").each((_, el) => {
@@ -78,27 +68,4 @@ const getHeadings = (page: CheerioAPI) => {
 		headings.push({ level: parseInt(tag[1]), text });
 	});
 	return headings;
-};
-
-const getHeadingsValidation = (headings: headingType[]) => {
-	const issues = [];
-	if(!headings.length) {
-		issues.push('No headings found');
-		return issues;
-	}
-
-	let lastLevel = 0;
-
-	headings.forEach((heading) => {
-		if (lastLevel && heading.level > lastLevel + 1) {
-			issues.push(`Skipped from H${lastLevel} to H${heading.level}: "${heading.text}"`);
-		}
-		lastLevel = heading.level;
-	});
-
-	const h1Count = headings.filter(h => h.level === 1).length;
-	if (h1Count === 0) issues.push("Missing H1 heading");
-	if (h1Count > 1) issues.push("Multiple H1 headings");
-
-	return issues;
 };
