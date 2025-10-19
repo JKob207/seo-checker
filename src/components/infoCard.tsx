@@ -14,6 +14,10 @@ const InfoCard = ({ type, title, message }: InfoCardProps) => {
 			text: 'text-red-800 dark:text-red-400',
 			bg: 'bg-red-100 dark:bg-gray-800',
 		},
+		success: {
+			text: 'text-green-800 dark:text-green-400',
+			bg: 'bg-green-100 dark:bg-gray-800',
+		}
 	};
 
 	const styles = STYLE_MAP[type];

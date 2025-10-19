@@ -1,8 +1,8 @@
 'use client';
 
 import AccessibilityManager from "@/components/analitics/AccessibilityManager";
-import StructureManager from "@/components/analitics/StructureManager";
-import TechManager from "@/components/analitics/TechManager";
+import StructureManager from "@/components/analitics/structure/StructureManager";
+import TechManager from "@/components/analitics/tech/TechManager";
 import WordsManager from "@/components/analitics/words/WordsManager";
 import ErrorAlert from "@/components/ErrorAlert";
 import { analiticsReportType } from "@/types";
@@ -55,8 +55,8 @@ const Analyze = () => {
 			{
 				analiticsReport && (
 					<>
-						<WordsManager analitics={analiticsReport.wordsAnalitics} />
 						<StructureManager analitics={analiticsReport.structureAnalitics} />
+						<WordsManager analitics={analiticsReport.wordsAnalitics} />
 						<TechManager analitics={analiticsReport.techAnalitics} />
 						<AccessibilityManager analitics={analiticsReport.accessibilityAnalitics} />
 					</>

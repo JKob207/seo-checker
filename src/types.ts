@@ -26,7 +26,7 @@ export type structureAnaliticsType = {
 		description: string,
 		descriptionLength: number,
 	},
-	headingsStructure: headingType,
+	headingsStructure: headingType[],
 	langTag: string | null,
 	robotsTag: string | null,
 	titleReport: {
@@ -41,7 +41,7 @@ export type techAnaliticsType = {
 	linksStats: {
 		internal: string[],
 		external: string[],
-		brokenCandidates: [],
+		brokenCandidates: string[],
 		total: number,
 	},
 	mobileViewportTag: string | null,
@@ -55,7 +55,7 @@ export type accessibilityAnaliticsType = {
 	missingAltAttr: string[]
 };
 
-export type alertTypes = 'info' | 'warning' | 'danger';
+export type alertTypes = 'info' | 'warning' | 'danger' | 'success';
 
 export type SEOValidationTypes = {
 	type: alertTypes,

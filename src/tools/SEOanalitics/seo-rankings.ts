@@ -103,3 +103,86 @@ export const getDescriptionLengthValidation = (length: number): SEOValidationTyp
 		message: ''
 	};
 };
+
+export const getPageLoadTimeValidation = (loadTime: number): SEOValidationTypes => {
+	if(loadTime < 1000) return {
+		type: 'success',
+		message: 'Lightning fast'
+	};
+	if(loadTime < 2500) return {
+		type: 'info',
+		message: 'Good performance'
+	};
+	if(length < 4000) return {
+		type: 'warning',
+		message: 'Needs improvment'
+	};
+	return {
+		type: 'danger',
+		message: 'Slow — optimize loading'
+	};
+};
+
+export const getPageSizeValidation = (sizeKb: number): SEOValidationTypes => {
+	if(sizeKb < 500) return {
+		type: 'success',
+		message: 'Very lightweight page'
+	};
+	if(sizeKb < 1500) return {
+		type: 'info',
+		message: 'Good page size'
+	};
+	if(sizeKb < 3000) return {
+		type: 'warning',
+		message: 'Consider optimizing assets'
+	};
+	return {
+		type: 'danger',
+		message: 'Too large — may impact SEO and UX'
+	};
+};
+
+export const getInternalLinksValidation = (internalSize: number, totalLinks: number): SEOValidationTypes => {
+	const ratio = (internalSize / totalLinks) * 100;
+
+	if(ratio > 0.6) return {
+		type: 'success',
+		message: 'Good internal links ratio (> 60%)'
+	};
+	if(ratio <= 0.6 && ratio > 0.4) return {
+		type: 'warning',
+		message: 'Consider increase number of external links'
+	};
+	return {
+		type: 'danger',
+		message: 'To less internal links. Consider improvment to at least 40%'
+	};
+};
+
+export const getExternalLinksValidation = (externalSize: number, totalLinks: number): SEOValidationTypes => {
+	const ratio = (externalSize / totalLinks) * 100;
+
+	if(ratio < 0.3) return {
+		type: 'success',
+		message: 'Good external links ratio (< 30%)'
+	};
+	if(ratio <= 0.3 && ratio >= 0.5) return {
+		type: 'warning',
+		message: 'Reduce number of external links'
+	};
+	return {
+		type: 'danger',
+		message: 'Too many external links. Reduce its number to at least 50%'
+	};
+};
+
+export const getBrokenLinksValidation = (brokenSize: number): SEOValidationTypes => {
+	if(brokenSize >= 1 && brokenSize <= 3) return {
+		type: 'warning',
+		message: 'Reduce number of broken links'
+	};
+	return {
+		type: 'danger',
+		message: 'Too many broken links. Fix them!'
+	};
+};

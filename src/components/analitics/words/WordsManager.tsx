@@ -6,7 +6,7 @@ import TopKeywordsDensity from "./TopKeywordsDensity";
 
 const WordsManager = ({ analitics }: WordsManagerProps) => {
 	return (
-		<div>
+		<section>
 			<h3 className='text-center font-bold text-xl p-2'>Words analitics</h3>
 			<div className='grid grid-cols-2 gap-2'>
 				<ContentDiversity analitics={analitics.contentDiversity} />
@@ -14,7 +14,7 @@ const WordsManager = ({ analitics }: WordsManagerProps) => {
 				<TopKeywords analitics={analitics.topKeywords} />
 				<TopKeywordsDensity analitics={analitics.topKeywordsDensity} />
 			</div>
-		</div>
+		</section>
 	);
 };
 
