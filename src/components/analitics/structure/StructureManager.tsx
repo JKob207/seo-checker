@@ -9,7 +9,7 @@ import DescriprionReport from "./DescriptionReport";
 const StructureManager = ({ analitics }: StructureManagerProps) => {
 	return (
 		<section>
-			<h3 className='text-center font-bold text-xl p-2'>Structure analitics</h3>
+			<h3 className='text-center font-bold text-xl p-2 mt-4'>Structure analitics</h3>
 			<div className='grid grid-cols-2 gap-2'>
 				<TitleReport analitics={analitics.titleReport} />
 				<DescriprionReport analitics={analitics.descriptionReport} />

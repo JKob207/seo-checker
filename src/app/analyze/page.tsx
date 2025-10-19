@@ -1,6 +1,6 @@
 'use client';
 
-import AccessibilityManager from "@/components/analitics/AccessibilityManager";
+import AccessibilityManager from "@/components/analitics/accessibility/AccessibilityManager";
 import StructureManager from "@/components/analitics/structure/StructureManager";
 import TechManager from "@/components/analitics/tech/TechManager";
 import WordsManager from "@/components/analitics/words/WordsManager";
@@ -54,12 +54,12 @@ const Analyze = () => {
 			}
 			{
 				analiticsReport && (
-					<>
+					<div className='py-4'>
 						<StructureManager analitics={analiticsReport.structureAnalitics} />
 						<WordsManager analitics={analiticsReport.wordsAnalitics} />
 						<TechManager analitics={analiticsReport.techAnalitics} />
 						<AccessibilityManager analitics={analiticsReport.accessibilityAnalitics} />
-					</>
+					</div>
 				)
 			}
 		</section>

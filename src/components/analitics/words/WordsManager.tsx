@@ -7,7 +7,7 @@ import TopKeywordsDensity from "./TopKeywordsDensity";
 const WordsManager = ({ analitics }: WordsManagerProps) => {
 	return (
 		<section>
-			<h3 className='text-center font-bold text-xl p-2'>Words analitics</h3>
+			<h3 className='text-center font-bold text-xl p-2 mt-4'>Words analitics</h3>
 			<div className='grid grid-cols-2 gap-2'>
 				<ContentDiversity analitics={analitics.contentDiversity} />
 				<FleschScore analitics={analitics.fleschScore} />
