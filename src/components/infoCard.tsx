@@ -1,3 +1,5 @@
+import { alertTypes } from "@/types";
+
 const InfoCard = ({ type, title, message }: InfoCardProps) => {
 	  const STYLE_MAP = {
 		info: {
@@ -17,14 +19,14 @@ const InfoCard = ({ type, title, message }: InfoCardProps) => {
 	const styles = STYLE_MAP[type];
 
 	return (
-		<div className={`w-1/2 p-4 mb-4 text-sm rounded-lg ${styles.text} ${styles.bg}`} role='alert'>
+		<div className={`p-4 text-sm rounded-lg ${styles.text} ${styles.bg}`} role='alert'>
 			<span className='font-medium'>{title}</span> {message}
 		</div>
 	);
 };
 
 type InfoCardProps = {
-    type: 'info' | 'warning' | 'danger',
+    type: alertTypes,
     title: string,
     message: string,
 };

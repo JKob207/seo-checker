@@ -1,19 +1,46 @@
-import { headingType } from "@/types";
+import { headingType, SEOValidationTypes } from "@/types";
 
-export const getFleschLabel = (fleschScore: number) => {
-	if(fleschScore < 50) return 'Difficult';
-	if(fleschScore >= 50 && fleschScore < 70 ) return 'Standard';
-	if(fleschScore >= 70) return 'Easy';
-	return '';
+export const getFleschLabel = (fleschScore: number): SEOValidationTypes => {
+	if(fleschScore < 50) return {
+		type: 'danger',
+		message: 'Difficult'
+	};
+	if(fleschScore >= 50 && fleschScore < 70 ) return {
+		type: 'warning',
+		message: 'Standard'
+	};
+	if(fleschScore >= 70) return {
+		type: 'info',
+		message: 'Easy'
+	};
+	return {
+		type: 'info',
+		message: ''
+	};
 };
 
-export const getContentDiversityLabels = (contentDiversity: number) => {
-	if(contentDiversity < 0.2) return 'All words are the same!';
-	if(contentDiversity >= 0.2 && contentDiversity < 0.4 ) return 'Low diversity';
-	if(contentDiversity >= 0.4 && contentDiversity < 0.6 ) return 'Moderate diversity';
-	if(contentDiversity >= 0.6 && contentDiversity < 0.8 ) return 'High diversity';
-	if(contentDiversity >= 0.8 ) return 'Very high diversity';
-	return '';
+export const getContentDiversityLabels = (contentDiversity: number): SEOValidationTypes => {
+	if(contentDiversity < 0.2) return {
+		type: 'danger',
+		message: 'All words are the same!'
+	};
+	if(contentDiversity >= 0.2 && contentDiversity < 0.4 ) return {
+		type: 'danger',
+		message: 'Low diversity'
+	};
+	if(contentDiversity >= 0.4 && contentDiversity < 0.6 ) return {
+		type: 'warning',
+		message: 'Moderate diversity'
+	};
+	if(contentDiversity >= 0.6 && contentDiversity < 0.8 ) return {
+		type: 'info',
+		message: 'High diversity',
+	};
+	if(contentDiversity >= 0.8 ) return {
+		type: 'info',
+		message: 'Very high diversity'
+	};
+	return {type: 'info', message: ''};
 };
 
 export const getHeadingsValidation = (headings: headingType[]) => {

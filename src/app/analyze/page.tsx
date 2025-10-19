@@ -1,9 +1,9 @@
 'use client';
 
-import AccessibilityManager from "@/components/analitics/accessibilityManager";
-import StructureManager from "@/components/analitics/structureManager";
-import TechManager from "@/components/analitics/techManager";
-import WordsManager from "@/components/analitics/wordsManager";
+import AccessibilityManager from "@/components/analitics/AccessibilityManager";
+import StructureManager from "@/components/analitics/StructureManager";
+import TechManager from "@/components/analitics/TechManager";
+import WordsManager from "@/components/analitics/words/WordsManager";
 import ErrorAlert from "@/components/ErrorAlert";
 import { analiticsReportType } from "@/types";
 import axios from "axios";
@@ -15,7 +15,7 @@ const Analyze = () => {
 	const searchParams = useSearchParams();
 	const pageUrl = searchParams.get('url');
 	const [analiticsReport, setAnaliticsReport] = useState<analiticsReportType | null>(null);
-	const [error, setError] = useState('sss');
+	const [error, setError] = useState('');
 
 	useEffect(() => {
 		const getSEOReport = async () => {

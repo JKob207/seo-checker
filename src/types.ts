@@ -16,8 +16,8 @@ export type analiticsReportType = {
 export type wordsAnaliticsType = {
 	contentDiversity: number,
 	fleschScore: number,
-	topKeywords: wordsFrequencyRecord,
-	topKeywordsDensity: wordsFrequencyRecord,
+	topKeywords: wordsFrequencyRecord[],
+	topKeywordsDensity: wordsFrequencyRecord[],
 };
 
 export type structureAnaliticsType = {
@@ -54,4 +54,11 @@ export type techAnaliticsType = {
 export type accessibilityAnaliticsType = {
 	missingAltAttr: string[]
 };
+
+export type alertTypes = 'info' | 'warning' | 'danger';
+
+export type SEOValidationTypes = {
+	type: alertTypes,
+	message: string
+}
 
