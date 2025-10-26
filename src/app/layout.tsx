@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
+import Loading from "@/components/Loading";
 
 const roboto = Roboto({
 	variable: "--font-roboto",
@@ -29,7 +30,7 @@ export default function RootLayout({
         		</section>
 
 				<main>
-					<Suspense fallback={<h2>Loading...</h2>}>
+					<Suspense fallback={<Loading />}>
 						{children}
 					</Suspense>
 				</main>
