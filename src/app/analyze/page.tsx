@@ -5,6 +5,7 @@ import StructureManager from "@/components/analitics/structure/StructureManager"
 import TechManager from "@/components/analitics/tech/TechManager";
 import WordsManager from "@/components/analitics/words/WordsManager";
 import ErrorAlert from "@/components/ErrorAlert";
+import Loading from "@/components/Loading";
 import { analiticsReportType } from "@/types";
 import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -16,19 +17,23 @@ const Analyze = () => {
 	const pageUrl = searchParams.get('url');
 	const [analiticsReport, setAnaliticsReport] = useState<analiticsReportType | null>(null);
 	const [error, setError] = useState('');
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
 		const getSEOReport = async () => {
 			try {
+				setIsLoading(true);
 				const result = await axios.post('/api/analyze', {
 					url: pageUrl
 				});
 				if (result.status === 200) {
 					setAnaliticsReport(result.data);
+					setIsLoading(false);
 				} else {
 					throw Error('Couldn\'t fetch the SEO raport');
 				}
 			} catch (error) {
+				setIsLoading(false);
 				console.log(error);
 				setError((error as Error).message);
 			}
@@ -51,6 +56,9 @@ const Analyze = () => {
 				error && (
 					<ErrorAlert errorTitle='SEO report fails!' errorDescription={error} onRetry={handleRetry} />
 				)
+			}
+			{
+				isLoading && <Loading />
 			}
 			{
 				analiticsReport && (
