@@ -60,5 +60,7 @@ export type alertTypes = 'info' | 'warning' | 'danger' | 'success';
 export type SEOValidationTypes = {
 	type: alertTypes,
 	message: string
-}
+};
+
+export type ScoreType = "info" | "warning" | "danger" | "success";
 
