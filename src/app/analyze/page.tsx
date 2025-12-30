@@ -36,7 +36,6 @@ const Analyze = () => {
 				}
 			} catch (error) {
 				setIsLoading(false);
-				console.log(error);
 				setError((error as Error).message);
 			}
 

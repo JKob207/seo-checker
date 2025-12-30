@@ -4,7 +4,6 @@ import ScoreCard from "../ScoreCard";
 
 const Summary = () => {
 	const { score } = useAnaliticsScoreContext();
-	console.log(score);
 
 	const scoreArray = (Object.keys(score) as ScoreType[]).map((type) => (
 		<ScoreCard key={type} type={type} score={score[type]} />
