@@ -13,7 +13,6 @@ const isMissingAltAttr = (page: CheerioAPI) => {
 
 	const imgTags = page('body img');
 	imgTags.each((_, el) => {
-		console.log(el);
 		const alt = el.attribs['alt'];
 		if(!alt && el.attribs['src'] !== '' ) {
 			missingAlt.push(el.attribs['src']);

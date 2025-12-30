@@ -2,8 +2,10 @@
 
 import AccessibilityManager from "@/components/analitics/accessibility/AccessibilityManager";
 import StructureManager from "@/components/analitics/structure/StructureManager";
+import Summary from "@/components/analitics/Summary";
 import TechManager from "@/components/analitics/tech/TechManager";
 import WordsManager from "@/components/analitics/words/WordsManager";
+import { AnaliticsProvider } from "@/components/AnaliticsContext";
 import ErrorAlert from "@/components/ErrorAlert";
 import Loading from "@/components/Loading";
 import { analiticsReportType } from "@/types";
@@ -34,7 +36,6 @@ const Analyze = () => {
 				}
 			} catch (error) {
 				setIsLoading(false);
-				console.log(error);
 				setError((error as Error).message);
 			}
 
@@ -63,10 +64,13 @@ const Analyze = () => {
 			{
 				analiticsReport && (
 					<div className='py-4'>
-						<StructureManager analitics={analiticsReport.structureAnalitics} />
-						<WordsManager analitics={analiticsReport.wordsAnalitics} />
-						<TechManager analitics={analiticsReport.techAnalitics} />
-						<AccessibilityManager analitics={analiticsReport.accessibilityAnalitics} />
+						<AnaliticsProvider>
+							<Summary />
+							<StructureManager analitics={analiticsReport.structureAnalitics} />
+							<WordsManager analitics={analiticsReport.wordsAnalitics} />
+							<TechManager analitics={analiticsReport.techAnalitics} />
+							<AccessibilityManager analitics={analiticsReport.accessibilityAnalitics} />
+						</AnaliticsProvider>
 					</div>
 				)
 			}
