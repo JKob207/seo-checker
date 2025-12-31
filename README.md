@@ -1,4 +1,8 @@
-SEO Checker is a simple Next.js application that allows you to paste a URL and see basic SEO and analytics-related insights for that page. The app is designed to be lightweight, fast, and easy to run locally.
+# SEO Checker
+
+SEO Checker is a simple Next.js application that allows you to paste a URL and see basic SEO and analytics-related insights for that page.
+
+Live app: https://seo-checker-mocha.vercel.app
 
 ## Features
 
