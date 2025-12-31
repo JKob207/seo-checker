@@ -1,4 +1,4 @@
-import { wordsFrequencyRecord } from "@/types";
+import { wordsFrequencyRecord } from "../../types";
 
 const MIN_WORD_LETTERS = 3;
 const TOP_KEYWORDS = 10;

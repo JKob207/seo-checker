@@ -1,4 +1,4 @@
-import { techAnaliticsType } from "@/types";
+import { techAnaliticsType } from "../../../types";
 import HTTPSSecurity from "./HTTPSSecurity";
 import MobileViewport from "./MobileViewport";
 import PageLoadTime from "./PageLoadTime";

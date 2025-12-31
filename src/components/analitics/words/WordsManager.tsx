@@ -1,4 +1,4 @@
-import { wordsAnaliticsType } from "@/types";
+import { wordsAnaliticsType } from "../../../types";
 import ContentDiversity from "./ContentDiversity";
 import FleschScore from "./FleschScore";
 import TopKeywords from "./TopKeywords";

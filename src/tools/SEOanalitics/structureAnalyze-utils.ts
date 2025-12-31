@@ -1,4 +1,4 @@
-import { headingType } from "@/types";
+import { headingType } from "../../types";
 import { CheerioAPI } from "cheerio";
 
 export const getStructureAnalitics = (page: CheerioAPI, topKeywords:  [string, number][]) => {

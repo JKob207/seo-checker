@@ -1,4 +1,4 @@
-import { accessibilityAnaliticsType } from "@/types";
+import { accessibilityAnaliticsType } from "../../../types";
 import MissingAltAttributes from "./MissingAltAttributes";
 
 const AccessibilityManager = ({ analitics }: AccessibilityManagerProps) => {

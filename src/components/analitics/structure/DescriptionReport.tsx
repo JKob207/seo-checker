@@ -1,7 +1,7 @@
-import { useAnaliticsScoreContext } from "@/components/AnaliticsContext";
-import InfoCard from "@/components/InfoCard";
-import { getDescriptionLengthValidation } from "@/tools/SEOanalitics/seo-rankings";
-import { ScoreType, SEOValidationTypes } from "@/types";
+import { useAnaliticsScoreContext } from "@components/AnaliticsContext";
+import InfoCard from "@components/InfoCard";
+import { getDescriptionLengthValidation } from "../../../tools/SEOanalitics/seo-rankings";
+import { ScoreType, SEOValidationTypes } from "../../../types";
 import { useEffect, useRef, useState } from "react";
 
 const DescriprionReport = ({ analitics }: DescriprionReportProps) => {

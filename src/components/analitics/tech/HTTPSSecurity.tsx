@@ -1,5 +1,5 @@
-import { useAnaliticsScoreContext } from "@/components/AnaliticsContext";
-import InfoCard from "@/components/InfoCard";
+import { useAnaliticsScoreContext } from "@components/AnaliticsContext";
+import InfoCard from "@components/InfoCard";
 import { useEffect, useRef } from "react";
 
 const HTTPSSecurity = ({ analitics }: HTTPSSecurityProps) => {

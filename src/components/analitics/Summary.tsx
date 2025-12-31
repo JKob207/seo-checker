@@ -1,4 +1,4 @@
-import { ScoreType } from "@/types";
+import { ScoreType } from "../../types";
 import { useAnaliticsScoreContext } from "../AnaliticsContext";
 import ScoreCard from "../ScoreCard";
 

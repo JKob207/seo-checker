@@ -1,7 +1,7 @@
-import { useAnaliticsScoreContext } from "@/components/AnaliticsContext";
-import InfoCard from "@/components/InfoCard";
-import { getPageLoadTimeValidation, getPageSizeValidation } from "@/tools/SEOanalitics/seo-rankings";
-import { ScoreType, SEOValidationTypes } from "@/types";
+import { useAnaliticsScoreContext } from "@components/AnaliticsContext";
+import InfoCard from "@components/InfoCard";
+import { getPageLoadTimeValidation, getPageSizeValidation } from "../../../tools/SEOanalitics/seo-rankings";
+import { ScoreType, SEOValidationTypes } from "../../../types";
 import { useEffect, useRef, useState } from "react";
 
 const PageLoadTime = ({ analitics }: PageLoadTimeProps) => {

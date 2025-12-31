@@ -1,4 +1,4 @@
-import { headingType, SEOValidationTypes } from "@/types";
+import { headingType, SEOValidationTypes } from "../../types";
 
 export const getFleschLabel = (fleschScore: number): SEOValidationTypes => {
 	if(fleschScore < 50) return {
