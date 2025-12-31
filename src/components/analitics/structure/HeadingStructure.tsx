@@ -1,7 +1,7 @@
-import { useAnaliticsScoreContext } from "@/components/AnaliticsContext";
-import InfoCard from "@/components/InfoCard";
-import { getHeadingsValidation } from "@/tools/SEOanalitics/seo-rankings";
-import { headingType } from "@/types";
+import { useAnaliticsScoreContext } from "@components/AnaliticsContext";
+import InfoCard from "@components/InfoCard";
+import { getHeadingsValidation } from "../../../tools/SEOanalitics/seo-rankings";
+import { headingType } from "../../../types";
 import { useEffect, useRef, useState } from "react";
 
 const HeadingStructure = ({ analitics }: HeadingStructureProps) => {

@@ -1,4 +1,4 @@
-import { ScoreType } from "@/types";
+import { ScoreType } from "../types";
 import { createContext, ReactNode, useContext, useState } from "react";
 
 const AnaliticsContext = createContext<AnaliticsContextType | null>(null);

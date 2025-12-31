@@ -1,5 +1,5 @@
-import { STYLE_MAP } from "@/constants";
-import { alertTypes } from "@/types";
+import { STYLE_MAP } from "../constants";
+import { alertTypes } from "../types";
 
 const InfoCard = ({ type, title, message }: InfoCardProps) => {
 	const styles = STYLE_MAP[type];

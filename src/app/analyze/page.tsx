@@ -1,14 +1,14 @@
 'use client';
 
-import AccessibilityManager from "@/components/analitics/accessibility/AccessibilityManager";
-import StructureManager from "@/components/analitics/structure/StructureManager";
-import Summary from "@/components/analitics/Summary";
-import TechManager from "@/components/analitics/tech/TechManager";
-import WordsManager from "@/components/analitics/words/WordsManager";
-import { AnaliticsProvider } from "@/components/AnaliticsContext";
-import ErrorAlert from "@/components/ErrorAlert";
-import Loading from "@/components/Loading";
-import { analiticsReportType } from "@/types";
+import AccessibilityManager from "@components/analitics/accessibility/AccessibilityManager";
+import StructureManager from "@components/analitics/structure/StructureManager";
+import Summary from "@components/analitics/Summary";
+import TechManager from "@components/analitics/tech/TechManager";
+import WordsManager from "@components/analitics/words/WordsManager";
+import { AnaliticsProvider } from "@components/AnaliticsContext";
+import ErrorAlert from "@components/ErrorAlert";
+import Loading from "@components/Loading";
+import { analiticsReportType } from "../../types";
 import axios from "axios";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

@@ -1,9 +1,9 @@
-import { getCleanPageText } from '@/tools/page-utils';
-import { getAccessibilityAnalitics } from '@/tools/SEOanalitics/accessibilityAnalyze-utils';
-import { getStructureAnalitics } from '@/tools/SEOanalitics/structureAnalyze-utils';
-import { getTechAnalitics } from '@/tools/SEOanalitics/technicalAnalyze-utils';
-import { getWordsAnalitics } from '@/tools/SEOanalitics/wordsAnalyze-utils';
-import { analyzeResponse } from '@/types';
+import { getCleanPageText } from '../../../tools/page-utils';
+import { getAccessibilityAnalitics } from '../../../tools/SEOanalitics/accessibilityAnalyze-utils';
+import { getStructureAnalitics } from '../../../tools/SEOanalitics/structureAnalyze-utils';
+import { getTechAnalitics } from '../../../tools/SEOanalitics/technicalAnalyze-utils';
+import { getWordsAnalitics } from '../../../tools/SEOanalitics/wordsAnalyze-utils';
+import { analyzeResponse } from '../../../types';
 import axios from 'axios';
 import * as cheerio from 'cheerio';
 

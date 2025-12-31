@@ -1,6 +1,6 @@
-import { useAnaliticsScoreContext } from "@/components/AnaliticsContext";
-import InfoCard from "@/components/InfoCard";
-import { wordsFrequencyRecord } from "@/types";
+import { useAnaliticsScoreContext } from "@components/AnaliticsContext";
+import InfoCard from "@components/InfoCard";
+import { wordsFrequencyRecord } from "../../../types";
 import { useEffect, useRef, useState } from "react";
 
 const TopKeywordsDensity = ({ analitics }: TopKeywordsDensityProps) => {

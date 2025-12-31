@@ -1,4 +1,4 @@
-import { structureAnaliticsType } from "@/types";
+import { structureAnaliticsType } from "../../../types";
 import HeadingStructure from "./HeadingStructure";
 import CanonicalTag from "./CanonicalTag";
 import RobotsTag from "./RobotsTag";

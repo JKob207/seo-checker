@@ -1,6 +1,6 @@
 'use client';
 
-import { isValidUrl } from "@/tools/validators";
+import { isValidUrl } from "../tools/validators";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, SyntheticEvent, useState } from "react";

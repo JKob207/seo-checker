@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
-import Loading from "@/components/Loading";
+import Loading from "@components/Loading";
 
 const roboto = Roboto({
 	variable: "--font-roboto",
